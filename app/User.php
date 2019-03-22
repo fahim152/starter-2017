@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'group_id', 'name', 'name_bangla', 'email', 'password', 'picture', 'signature', 'mobile', 'status',
+        'name', 'name_bangla', 'email', 'password', 'picture', 'signature', 'mobile', 'status', 'group_id'
     ];
 
     /**

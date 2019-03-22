@@ -14,7 +14,7 @@ class Group extends Model
      *
      * @var array
      */
-    protected $dates = ['deleted_at'];
+    // protected $dates = ['deleted_at'];
 
     public function users() {
         return $this->hasMany('App\User' ,'group_id');
