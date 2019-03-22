@@ -23,8 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('picture')->nullable();
             $table->string('signature')->nullable();
             $table->string('mobile')->nullable();
-            $table->unsignedBigInteger('group_id')->nullable();
             $table->enum('status', ['pending', 'active', 'suspend', 'archive'])->default("active");
+            $table->unsignedBigInteger('group_id')->nullable();
             $table->foreign('group_id')->references('id')->on('groups');
             $table->rememberToken();
             $table->softDeletes();

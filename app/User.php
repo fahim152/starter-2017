@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use SoftDeletes;
     use Notifiable;
 
     /**
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'group_id', 'name', 'name_bangla', 'email', 'password', 'picture', 'signature', 'mobile', 'status',
     ];
 
     /**
@@ -36,4 +37,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function group() {
+        return $this->belongsTo('App\Group','group_id');
+    }
 }
