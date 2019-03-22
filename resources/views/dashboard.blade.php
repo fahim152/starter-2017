@@ -46,7 +46,7 @@
 @endsection
 
 @section('script')
-<script type="text/javascript" src="/assets/plugins/gstatic.com-charts-loader.js"></script>
+<script type="text/javascript" src="{{ asset('js/gstatic.com-charts-loader.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/charts.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/form.js')}}"></script>
 @endsection
