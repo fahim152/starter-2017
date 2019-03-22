@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Developer',
             'name_bangla' => 'ডেভেলপার',
             'email' => 'arif.saiket@gmail.com',
+            'email_verified_at' => new DateTime,
             'password' => bcrypt('123456789'),
             'updated_at' => new DateTime,
             'created_at' => new DateTime,
