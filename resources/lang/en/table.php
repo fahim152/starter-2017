@@ -4,6 +4,7 @@ return [
     'add'                   => 'Add :attribute',
     'bulk'                  => ':attribute Bulk Creation',
     'table'                 => ':attribute Table',
+    'detail'                => ':attribute Detail',
 
     'saving_option'         => 'Saving Option',
     'reload'                => 'Reload',
@@ -34,6 +35,5 @@ return [
     'deleted_time'          => 'Deleted Time',
     'checked_time'          => 'Checked Time',
     
-    'detail'                => ':attribute Detail',
 
 ];
