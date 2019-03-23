@@ -77,6 +77,7 @@ class GroupController extends Controller {
         if($this->checkMenuPermission($this->nav, 'create') || $this->checkMenuPermission($this->nav, 'update')) {
             $validator = Validator::make($request->all(), [
                 'group_name' => 'required|max:255',
+                'group_description' => 'max:1000',
             ]);
             if ($validator->fails()) {
                 $this->errors = $validator->messages();
@@ -88,6 +89,7 @@ class GroupController extends Controller {
                 $group = new Group;
             }
             $group->name = $request->input('group_name');
+            $group->description = $request->input('group_description');
 
             //    $group->description = $request->input('description');
             if ($group->save()) {

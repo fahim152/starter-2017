@@ -99,7 +99,7 @@ class UserController extends Controller {
             $validation = [
                 'group'         => 'required',
                 'name'          => 'required|string|max:255',
-                'name_bangla'   => 'required|string|max:255',
+                'mobile'        => 'string|max:11',
             ];
             if (!$request->user) {
                 $validation['email']= 'required|string|email|max:255|unique:users';
@@ -120,7 +120,7 @@ class UserController extends Controller {
             $user->group_id = $request->input('group');
 
             $user->name = $request->input('name');
-            $user->name_bangla = $request->input('name_bangla');
+            $user->mobile = $request->input('mobile');
 
             if($request->has('email')) {
                 $user->email = $request->input('email');
@@ -149,7 +149,6 @@ class UserController extends Controller {
     public function profileUpdate(Request $request) {
         $validator = Validator::make($request->all(), [
             'name'        => 'required|string|max:255',
-            'name_bangla' => 'required|string|max:255',
             'email'       => 'required|string|email|max:255',
             'mobile'      => 'required|string|max:11',
         ]);
@@ -161,7 +160,6 @@ class UserController extends Controller {
         $user = User::find(Auth::user()->id);
 
         $user->name = $request->input('name');
-        $user->name_bangla = $request->input('name_bangla');
         $user->email = $request->input('email');
         $user->mobile = $request->input('mobile');
 
