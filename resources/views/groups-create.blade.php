@@ -56,14 +56,14 @@
                             <div class="form-body">
                                 <!--Group Name-->
                                 <div class="form-group has-error-group_name">
-                                    <label class="col-md-3 control-label"> @lang('field.name', ['attribute' => __('page.group')]) <span class="required" aria-required="true"> * </span></label>
+                                    <label class="col-md-3 control-label"> @lang('page.name', ['attribute' => __('page.group')]) <span class="required" aria-required="true"> * </span></label>
                                     <div class="col-md-4">
                                         <input type="text" name="group_name" value="{{ isset($group['name']) ? $group['name'] : old('name')}}" placeholder="Group Name" class="form-control" required="">
                                     </div>
                                 </div>
                                 <!--Group Description-->
                                 <div class="form-group has-error-group_description">
-                                    <label class="col-md-3 control-label"> @lang('field.description', ['attribute' => __('page.group')]) <span class="required" aria-required="true"> &nbsp;&nbsp; </span></label>
+                                    <label class="col-md-3 control-label"> @lang('page.description', ['attribute' => __('page.group')]) <span class="required" aria-required="true"> &nbsp;&nbsp; </span></label>
                                     <div class="col-md-4">
                                         <textarea name="group_description" placeholder="Description" rows="4" class="form-control">{{ isset($group['description']) ? $group['description'] : old('description')}}</textarea>
                                     </div>

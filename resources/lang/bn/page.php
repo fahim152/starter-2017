@@ -5,19 +5,21 @@ return [
     'fail'                  => ':attribute Failed!',
     'missing'               => ':attribute Missing!',
     
-    'create'                => 'Create :attribute',
-    'edit'                  => 'Edit :attribute',
-    'update'                => 'Update :attribute',
-    'save'                  => 'Save :attribute',
+    'create'                => 'Create',
+    'edit'                  => 'Edit',
+    'update'                => 'Update',
+    'save'                  => 'Save',
+    'cancel'                => 'Cancel',
+
     'select'                => 'Select :attribute',
     'change'                => 'Change :attribute',
+    'view'                  => 'View :attribute',
     'remove'                => 'Remove :attribute',
     'preview'               => 'Preview :attribute',
-    'cancel'                => 'Cancel :attribute',
     'check'                 => 'Check :attribute',
 
     'date'                  => ':attribute Date',
-    'form'                  => ':attribute Form',
+    'form'                  => ':attribute Form :type',
 
     'submit'                => 'Submit',
     'confirm'               => 'Confirm',
@@ -37,13 +39,26 @@ return [
     'lang_alt'              => 'Bangla',
     'lang_alt_code'         => 'bn',
 
-    'profile'               => 'Profile',
-    'picture'               => 'Picture',
-    'signature'             => 'Signature',
-    'dashboard'             => 'Dashboard',
+    /**
+     * Custom Code Here
+     */
+    'name'                  => ':attribute Name',
+    'description'           => ':attribute Description',
+
+    'viewing_menu'          => "Viewing Menu",
+    'operation_setup'       => 'Operation',
+    'permission'            => 'Permission',
+    'permissions'           => 'Permissions',
     'menu'                  => 'Menu Control',
 
-    'operation_setup'       => 'Operation',
+    'email'                 => 'Email',
+    'mobile'                => 'Mobile',
+
+    'profile'               => 'Profile',
+    'picture'               => 'Picture',
+    'password'              => 'Password',
+    'signature'             => 'Signature',
+    'dashboard'             => 'Dashboard',
     'group'                 => 'Group',
     'groups'                => 'Groups',
     'user'                  => 'User',

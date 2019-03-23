@@ -56,7 +56,7 @@
 
                                     <!--User Group-->
                                     <div class="form-group has-error-group">
-                                        <label class="col-md-3 control-label"> @lang('field.name', ['attribute' => __('page.group')]) <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> @lang('page.name', ['attribute' => __('page.group')]) <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <select class="form-control" id="group"name="group" required="">
                                                 <option value="">-- @lang('page.select', ['attribute' => __('page.group')]) --</option>
@@ -69,23 +69,23 @@
 
                                     <!--User Name-->
                                     <div class="form-group has-error-name">
-                                        <label class="col-md-3 control-label"> User Name <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> @lang('page.name', ['attribute' => __('page.user')]) <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <input type="text" name="name" value="{{ isset($user['name']) ? $user['name'] : old('name')}}" placeholder="User Name" class="form-control" required="">
                                         </div>
                                     </div>
 
-                                    <!--User Name-->
-                                    <div class="form-group has-error-name_bangla">
+                                    <!--User Name Bangla -->
+                                    <!-- <div class="form-group has-error-name_bangla">
                                         <label class="col-md-3 control-label">ব্যবহারকারীর নাম<span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <input type="text" name="name_bangla" value="{{ isset($user['name_bangla']) ? $user['name_bangla'] : old('name_bangla')}}" placeholder="ইউজারের নাম বাংলায়" class="form-control" required="">
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <!--User Mobile-->
                                     <div class="form-group has-error-mobile">
-                                        <label class="col-md-3 control-label"> Mobile <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> @lang('page.mobile') <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <input type="text" name="mobile" placeholder="Mobile" class="form-control" value="{{ isset($user['mobile']) ? $user['mobile'] : old('mobile')}}" maxlength="11">
                                         </div>
@@ -94,7 +94,7 @@
                                     @if($user['id'] == "")
                                     <!--User Email-->
                                     <div class="form-group has-error-email">
-                                        <label class="col-md-3 control-label"> Email <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> @lang('page.email') <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <input type="email" name="email" placeholder="Email" class="form-control" value="{{ isset($user['email']) ? $user['email'] : old('email')}}">
                                         </div>
@@ -102,7 +102,7 @@
 
                                     <!--User password-->
                                     <div class="form-group has-error-password">
-                                        <label class="col-md-3 control-label"> Password <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> @lang('page.password') <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <input type="password" name="password" placeholder="Password" class="form-control" value="">
                                         </div>

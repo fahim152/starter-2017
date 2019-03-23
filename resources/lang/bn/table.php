@@ -5,29 +5,35 @@ return [
     'bulk'                  => ':attribute Bulk Creation',
     'table'                 => ':attribute Table',
 
-    'saving_option'         => 'সংরক্ষণ বিকল্প',
+    'saving_option'         => 'Saving Option',
     'reload'                => 'Reload',
     'cancel'                => 'Cancel',
     
-    'action'                => 'প্রক্রিয়া',
-    'search'                => 'অনুসন্ধান',
-    'reset'                 => 'পুন:স্থাপন',
-    'foundtotalrecords'     => 'মোট পাওয়া :attribute রেকর্ড',
+    'action'                => 'Action',
+    'search'                => 'Search',
+    'reset'                 => 'Reset',
+    'foundtotalrecords'     => 'Found total :attribute Records',
 
     'number'                => 'Number',
-    'page'                  => 'পৃষ্ঠা',
+    'page'                  => 'Page',
     'view'                  => 'View',
     'record'                => 'Record',
     'type'                  => 'Type',
-    'name'                  => 'নাম',
+
+    '#'                     => '#',
+    'name'                  => 'Name',
+    'email'                 => 'Email',
+    'group'                 => 'Group',
     'mobile'                => 'Mobile',
-    'status'                => 'অবস্থা',
+    'status'                => 'Status',
     'code'                  => 'Code',
     'count'                 => 'Count',
-    
-    'detail'                => ':attribute বিস্তারিত',
-    'time'                  => ':attribute সময়',
 
-    'updated'               => 'Updated',
-    'checked'               => 'Checked',
+    'created_time'          => 'Created Time',
+    'updated_time'          => 'Updated Time',
+    'deleted_time'          => 'Deleted Time',
+    'checked_time'          => 'Checked Time',
+    
+    'detail'                => ':attribute Detail',
+
 ];

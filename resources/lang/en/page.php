@@ -39,17 +39,26 @@ return [
     'lang_alt'              => 'Bangla',
     'lang_alt_code'         => 'bn',
 
-    'profile'               => 'Profile',
-    'picture'               => 'Picture',
-    'password'              => 'Password',
-    'signature'             => 'Signature',
-    'dashboard'             => 'Dashboard',
-    'menu'                  => 'Menu Control',
+    /**
+     * Custom Code Here
+     */
+    'name'                  => ':attribute Name',
+    'description'           => ':attribute Description',
 
     'viewing_menu'          => "Viewing Menu",
     'operation_setup'       => 'Operation',
     'permission'            => 'Permission',
     'permissions'           => 'Permissions',
+    'menu'                  => 'Menu Control',
+
+    'email'                 => 'Email',
+    'mobile'                => 'Mobile',
+
+    'profile'               => 'Profile',
+    'picture'               => 'Picture',
+    'password'              => 'Password',
+    'signature'             => 'Signature',
+    'dashboard'             => 'Dashboard',
     'group'                 => 'Group',
     'groups'                => 'Groups',
     'user'                  => 'User',

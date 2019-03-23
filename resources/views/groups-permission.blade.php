@@ -73,7 +73,7 @@
                                                         <span></span>
                                                     </label>
                                                 </th>
-                                                <th> @lang('field.name', ['attribute' => __('page.permission')]) </th>
+                                                <th> @lang('page.name', ['attribute' => __('page.permission')]) </th>
                                             </tr>
                                         </thead>
                                         <tbody>
