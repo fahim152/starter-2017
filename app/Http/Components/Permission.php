@@ -27,6 +27,11 @@ trait Permission {
         ];
     }
 
+    
+    public function checkMenuPermission($key, $subkey = "")
+    {
+        return $this->checkPermission('viewing_menu', $key);
+    }
 
     /* This function if a group of user has permission to access something,
      * Ex: access to some "status" to change or access to some page, Ex: reports.
