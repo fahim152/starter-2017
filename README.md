@@ -1,1 +1,1 @@
-# scratch-booster
+# Scratch Booster
