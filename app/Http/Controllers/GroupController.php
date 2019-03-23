@@ -55,7 +55,7 @@ class GroupController extends Controller {
         }
         $params['group']['id'] = "";
         $params['lang_type'] = "create";
-        return view('groups-create', compact('params'))->withNav($this->nav);
+        return view('groups-create', $params)->withNav($this->nav);
     }
 
     public function edit(Request $request) {
@@ -66,7 +66,8 @@ class GroupController extends Controller {
             if ($group) {
                 $params['group'] = $group;
                 $params['lang_type'] = "edit";
-                return view('groups-create', compact('params'))->withNav($this->nav);
+                // dd($params);
+                return view('groups-create', $params)->withNav($this->nav);
             }
         }
         return redirect(route($this->nav));

@@ -13,7 +13,7 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1> @lang('page.group') {{ ($group['id'] != "") ? __('page.edit') : __('page.create') }}
+                <h1> @lang('page.group') {{ __('page.' . $lang_type) }}
                     <small></small>
                 </h1>
             </div>
@@ -23,15 +23,15 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <a href="{{ route('dashboard') }}">@lang('page.dashboard')</a>
+                <a href="{{ route('dashboard') }}"> @lang('page.dashboard') </a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
-                <a href="{{ route('groups') }}">@lang('page.groups')</a>
+                <a href="{{ route('groups') }}"> @lang('page.groups') </a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
-                <span class="active">{{ ($group['id'] != "") ? __('page.edit') : __('page.create') }}</span>
+                <span class="active"> {{ __('page.' . $lang_type) }} </span>
             </li>
         </ul>
         <!-- END PAGE BREADCRUMB -->
@@ -41,7 +41,7 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-people"></i>
-                        <span class="caption-subject bold uppercase"> {{ ($group['id'] != "") ? __('page.form', ['attribute' => __('page.group'), 'type' => __('page.edit')]) : __('page.form', ['attribute' => __('page.group'), 'type' => __('page.create')]) }} </span>
+                        <span class="caption-subject bold uppercase"> {{ __('page.form', ['attribute' => __('page.group'), 'type' => __('page.'.$lang_type)]) }} </span>
                     </div>
                 </div>
                 <div class="portlet-body form">

@@ -13,7 +13,7 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1> @lang('page.user') {{ ($user['id'] != "") ? __('page.edit') : __('page.create') }}
+                <h1> @lang('page.user') {{ __('page.' . $lang_type) }}
                     <small></small>
                 </h1>
             </div>
@@ -23,15 +23,15 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <a href="{{ route('dashboard') }}">@lang('page.dashboard')</a>
+                <a href="{{ route('dashboard') }}"> @lang('page.dashboard') </a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
-                <a href="{{ route('users') }}">  @lang('page.users')</a>
+                <a href="{{ route('users') }}"> @lang('page.users') </a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
-                <span class="active">{{ ($user['id'] != "") ? __('page.edit') : __('page.create') }}</span>
+                <span class="active"> {{ __('page.' . $lang_type) }} </span>
             </li>
         </ul>
         <!-- END PAGE BREADCRUMB -->
@@ -41,7 +41,7 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-user"></i>
-                        <span class="caption-subject bold uppercase"> {{ ($user['id'] != "") ? __('page.form', ['attribute' => __('page.user'), 'type' => __('page.edit')]) : __('page.form', ['attribute' => __('page.user'), 'type' => __('page.create')]) }} </span>
+                        <span class="caption-subject bold uppercase"> {{ __('page.form', ['attribute' => __('page.user'), 'type' => __('page.'.$lang_type)]) }} </span>
                     </div>
                 </div>
                 <div class="portlet-body form">
@@ -83,20 +83,20 @@
                                         </div>
                                     </div>
 
+                                    <!--User Mobile-->
+                                    <div class="form-group has-error-mobile">
+                                        <label class="col-md-3 control-label"> Mobile <span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-4">
+                                            <input type="text" name="mobile" placeholder="Mobile" class="form-control" value="{{ isset($user['mobile']) ? $user['mobile'] : old('mobile')}}" maxlength="11">
+                                        </div>
+                                    </div>
+
                                     @if($user['id'] == "")
                                     <!--User Email-->
                                     <div class="form-group has-error-email">
                                         <label class="col-md-3 control-label"> Email <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <input type="email" name="email" placeholder="Email" class="form-control" value="{{ isset($user['email']) ? $user['email'] : old('email')}}">
-                                        </div>
-                                    </div>
-
-                                    <!--User Mobile-->
-                                    <div class="form-group has-error-mobile">
-                                        <label class="col-md-3 control-label"> Mobile <span class="required" aria-required="true"> * </span></label>
-                                        <div class="col-md-4">
-                                            <input type="text" name="mobile" placeholder="Mobile" class="form-control" value="{{ isset($user['mobile']) ? $user['mobile'] : old('mobile')}}" maxlength="11">
                                         </div>
                                     </div>
 
@@ -110,7 +110,7 @@
                                     @endif
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-3">
-                                            <button type="submit" class="btn green">{{ ($user['id'] != "") ? __('page.update') : __('page.create') }}</button>
+                                            <button type="submit" class="btn green">{{ ($user['id'] != "") ? __('page.update') : __('page.create') }} @lang('page.user') </button>
                                             <a href="{{ route('users') }}" class="btn btn-default"> @lang('page.cancel')</a>
                                         </div>
                                     </div>
