@@ -56,7 +56,7 @@
 
                                     <!--User Group-->
                                     <div class="form-group has-error-group">
-                                        <label class="col-md-3 control-label"> @lang('page.group') <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> @lang('field.name', ['attribute' => __('page.group')]) <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <select class="form-control" id="group"name="group" required="">
                                                 <option value="">-- @lang('page.select', ['attribute' => __('page.group')]) --</option>
@@ -69,7 +69,7 @@
 
                                     <!--User Name-->
                                     <div class="form-group has-error-name">
-                                        <label class="col-md-3 control-label">User Name <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> User Name <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <input type="text" name="name" value="{{ isset($user['name']) ? $user['name'] : old('name')}}" placeholder="User Name" class="form-control" required="">
                                         </div>
