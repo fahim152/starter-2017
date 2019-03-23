@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'add'                   => 'Add :attribute',
+    'bulk'                  => ':attribute Bulk Creation',
+    'table'                 => ':attribute Table',
+
     'saving_option'         => 'Saving Option',
     'reload'                => 'Reload',
     'cancel'                => 'Cancel',
@@ -11,19 +15,25 @@ return [
     'foundtotalrecords'     => 'Found total :attribute Records',
 
     'number'                => 'Number',
-    'page'                  => 'Page:attribute',
+    'page'                  => 'Page',
     'view'                  => 'View',
-    'record'                => 'Record:attribute',
+    'record'                => 'Record',
     'type'                  => 'Type',
-    'name'                  => 'Name :attribute',
-    'mobile'                => 'Mobile :attribute',
-    'status'                => 'Status :attribute',
-    'code'                  => 'Code :attribute',
+
+    '#'                     => '#',
+    'name'                  => 'Name',
+    'email'                 => 'Email',
+    'group'                 => 'Group',
+    'mobile'                => 'Mobile',
+    'status'                => 'Status',
+    'code'                  => 'Code',
     'count'                 => 'Count',
+
+    'created_time'          => 'Created Time',
+    'updated_time'          => 'Updated Time',
+    'deleted_time'          => 'Deleted Time',
+    'checked_time'          => 'Checked Time',
     
     'detail'                => ':attribute Detail',
-    'time'                  => ':attribute Time',
 
-    'updated'               => 'Updated',
-    'checked'               => 'Checked',
 ];

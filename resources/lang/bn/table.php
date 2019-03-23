@@ -1,5 +1,10 @@
 <?php
+
 return [
+    'add'                   => 'Add :attribute',
+    'bulk'                  => ':attribute Bulk Creation',
+    'table'                 => ':attribute Table',
+
     'saving_option'         => 'সংরক্ষণ বিকল্প',
     'reload'                => 'Reload',
     'cancel'                => 'Cancel',
@@ -10,14 +15,14 @@ return [
     'foundtotalrecords'     => 'মোট পাওয়া :attribute রেকর্ড',
 
     'number'                => 'Number',
-    'page'                  => 'পৃষ্ঠা:attribute',
+    'page'                  => 'পৃষ্ঠা',
     'view'                  => 'View',
-    'record'                => 'Record:attribute',
+    'record'                => 'Record',
     'type'                  => 'Type',
-    'name'                  => 'নাম :attribute',
-    'mobile'                => 'Mobile :attribute',
-    'status'                => 'অবস্থা :attribute',
-    'code'                  => 'Code :attribute',
+    'name'                  => 'নাম',
+    'mobile'                => 'Mobile',
+    'status'                => 'অবস্থা',
+    'code'                  => 'Code',
     'count'                 => 'Count',
     
     'detail'                => ':attribute বিস্তারিত',

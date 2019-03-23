@@ -5,7 +5,6 @@ return [
     'fail'                  => ':attribute Failed!',
     'missing'               => ':attribute Missing!',
     
-    'add'                   => 'Add :attribute',
     'create'                => 'Create :attribute',
     'edit'                  => 'Edit :attribute',
     'update'                => 'Update :attribute',
@@ -19,7 +18,6 @@ return [
 
     'date'                  => ':attribute Date',
     'form'                  => ':attribute Form',
-    'table'                 => ':attribute Table',
 
     'submit'                => 'Submit',
     'confirm'               => 'Confirm',

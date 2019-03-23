@@ -19,7 +19,6 @@ class UserController extends Controller {
 
     function __construct()
     {
-        $this->middleware('menu');
     }
 
     public function index() {
@@ -44,8 +43,7 @@ class UserController extends Controller {
                 [ "title" => "name", "filter" => $this->filterText("name")],
                 [ "title" => "email", "filter" => $this->filterText("email")],
                 [ "title" => "group", "filter" => $this->filterText("group")],
-                [ "title" => "office", "filter" => $this->filterText("office")],
-                [ "title" => "district", "filter" => $this->filterText("district")],
+                [ "title" => "mobile", "filter" => $this->filterText("mobile")],
                 [ "title" => "updated_time", "filter" => $this->filterDateRange()],
                 [ "title" => "action", "filter" => $this->filterAction()],
             ],

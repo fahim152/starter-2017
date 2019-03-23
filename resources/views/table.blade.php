@@ -15,17 +15,17 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1>@lang('dashboard.dashboard_title.'.$titles)
+                <h1>@lang('page.'.$titles)
                     <small></small>
                 </h1>
             </div>
             <!-- END PAGE TITLE -->
             <div class="pull-right">
               @if(isset($bulk) and $bulk)
-              <a href="{{ url($base_url . '/bulk-create') }}" class="btn green-meadow" style="margin-right: 10px"> <?= $icons ?> Bulk Creation </a>
+              <a href="{{ url($base_url . '/bulk-create') }}" class="btn green-meadow" style="margin-right: 10px"> <?= $icons ?> @lang('table.bulk', [ 'attribute' => trans('page.'.$title) ]) </a>
               @endif
               @if(isset($create) and $create)
-              <a href="{{ url($base_url . '/create') }}" class="btn green pull-right"> <?= $icon ?> </i>  @lang('dashboard.dashboard_title.'.$title) @lang('table.add')</a>
+              <a href="{{ url($base_url . '/create') }}" class="btn green pull-right"> <?= $icon ?> </i> @lang('table.add', [ 'attribute' => trans('page.'.$title) ]) </a>
               @endif
             </div>
         </div>
@@ -33,7 +33,7 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <a href="{{ route('dashboard') }}">@lang('dashboard.dashboard_title.dashboard')</a>
+                <a href="{{ route('dashboard') }}">@lang('page.dashboard')</a>
                 <i class="fa fa-circle"></i>
             </li>
             @if(isset($middlePage))
@@ -43,7 +43,7 @@
             </li>
             @endif
             <li>
-                <span class="active">@lang('dashboard.dashboard_title.'.$title) </span>
+                <span class="active">@lang('page.'.$title) </span>
             </li>
         </ul>
 
@@ -51,40 +51,39 @@
             <div class="portlet-title">
                 <div class="caption">
                     <?= $icons ?>
-                    <span class="caption-subject sbold uppercase"> @lang('dashboard.dashboard_title.'.$title) </span>
-                    <!-- For add word table beside title, add this line after title @lang('dashboard.dashboard_title.table') -->
+                    <span class="caption-subject sbold uppercase"> @lang('table.table', ['attribute' => trans($titles)]) </span>
                 </div>
                 <div class="actions">
                     <div class="btn-group">
                         <a class="btn default" href="javascript:;" data-toggle="dropdown">
-                            <span class="hidden-xs"> @lang('dashboard.dashboard_title.saving_option') </span>
+                            <span class="hidden-xs"> @lang('table.saving_option') </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu pull-right" id="datatable_ajax_tools">
                             <li>
                                 <a href="javascript:;" data-action="0" class="tool-action">
-                                    <i class="icon-printer"></i> @lang('dashboard.dashboard_title.print')
+                                    <i class="icon-printer"></i> Print
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:;" data-action="1" class="tool-action">
-                                    <i class="icon-check"></i> @lang('dashboard.dashboard_title.copy')
+                                    <i class="icon-check"></i> Copy
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:;" data-action="3" class="tool-action">
-                                    <i class="icon-paper-clip"></i> @lang('dashboard.dashboard_title.excel')
+                                    <i class="icon-paper-clip"></i> Excel
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:;" data-action="4" class="tool-action">
-                                    <i class="icon-cloud-upload"></i> @lang('dashboard.dashboard_title.csv')
+                                    <i class="icon-cloud-upload"></i> CSV
                                 </a>
                             </li>
                             <li class="divider"> </li>
                             <li>
                                 <a href="javascript:;" data-action="5" class="tool-action">
-                                    <i class="icon-refresh"></i>  @lang('dashboard.dashboard_title.reload')
+                                    <i class="icon-refresh"></i> @lang('table.reload')
                                 </a>
                             </li>
                         </ul>
@@ -106,9 +105,9 @@
                             <tr role="row" class="heading">
                                 @foreach ($columns as $key => $column)
                                 @if(isset($column['width']))
-                                    <th width='<?= $column['width'] ?>'> @lang('table.table_header.'.$column['title']) </th>
+                                    <th width='<?= $column['width'] ?>'> @lang('table.'.$column['title']) </th>
                                 @else
-                                    <th> <span class='title'> @lang('table.table_header.'.$column['title']) <?= isset($column['custom_html']) ? $column['custom_html'] : ''; ?></span> </th>
+                                    <th> <span class='title'> @lang('table.'.$column['title']) <?= isset($column['custom_html']) ? $column['custom_html'] : ''; ?></span> </th>
                                 @endif
                                 @endforeach
                             </tr>
