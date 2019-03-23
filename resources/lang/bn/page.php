@@ -34,34 +34,34 @@ return [
     'updating'              => 'Updating :attribute',
 
     'language'              => 'Language',
-    'lang'                  => 'English',
-    'lang_code'             => 'en',
-    'lang_alt'              => 'Bangla',
-    'lang_alt_code'         => 'bn',
+    'lang'                  => 'Bangla',
+    'lang_code'             => 'bn',
+    'lang_alt'              => 'English',
+    'lang_alt_code'         => 'en',
 
     /**
      * Custom Code Here
      */
-    'name'                  => ':attribute Name',
-    'description'           => ':attribute Description',
+    'name'                  => ':attribute এর নাম',
+    'description'           => ':attribute এর বিবরণ',
 
-    'viewing_menu'          => "Viewing Menu",
-    'operation_setup'       => 'Operation',
-    'permission'            => 'Permission',
-    'permissions'           => 'Permissions',
-    'menu'                  => 'Menu Control',
+    'viewing_menu'          => "মেনু দেখা",
+    'operation_setup'       => 'অপারেশন',
+    'permission'            => 'অনুমতি',
+    'permissions'           => 'অনুমতিসমূহ',
+    'menu'                  => 'মেনু নিয়ন্ত্রণ',
 
-    'email'                 => 'Email',
-    'mobile'                => 'Mobile',
+    'email'                 => 'ইমেইল',
+    'mobile'                => 'মোবাইল',
 
-    'profile'               => 'Profile',
-    'picture'               => 'Picture',
-    'password'              => 'Password',
-    'signature'             => 'Signature',
-    'dashboard'             => 'Dashboard',
-    'group'                 => 'Group',
-    'groups'                => 'Groups',
-    'user'                  => 'User',
-    'users'                 => 'Users',
+    'profile'               => 'প্রোফাইল',
+    'picture'               => 'ছবি',
+    'password'              => 'পাসওয়ার্ড',
+    'signature'             => 'স্বাক্ষর',
+    'dashboard'             => 'ড্যাশবোর্ড',
+    'group'                 => 'গ্রুপ',
+    'groups'                => 'গ্রুপসমূহ',
+    'user'                  => 'ব্যবহারকারী',
+    'users'                 => 'ব্যবহারকারীসমূহ',
 ];
 
