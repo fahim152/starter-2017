@@ -27,7 +27,6 @@ class UserController extends Controller {
         $params = [
             'base_url' => route('users'),
             'dataload_url' => route('users_load'),
-            'page_title' => "Users",
             'title' => "user",
             'titles' => "users",
             'icon' => $this->getIcons($this->nav),
@@ -74,6 +73,7 @@ class UserController extends Controller {
         }
         $params['user']['id'] = "";
         $params['groups'] = Group::all();
+        $params['lang_type'] = "create";
 
         return view('users-create', $params)->withNav($this->nav);
     }
@@ -85,6 +85,7 @@ class UserController extends Controller {
             $user = User::find($request->user);
             $params['user'] = $user;
             $params['groups'] = Group::all();
+            $params['lang_type'] = "edit";
 
             if ($user) {
                 return view('users-create', $params)->withNav($this->nav);

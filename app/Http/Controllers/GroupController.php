@@ -24,7 +24,6 @@ class GroupController extends Controller {
         $params = [
             'base_url' => route('groups'),
             'dataload_url' => route('groups_load'),
-            'page_title' => "Groups",
             'title' => "group",
             'titles' => "groups",
             'icon' => $this->getIcons($this->nav),
@@ -54,8 +53,9 @@ class GroupController extends Controller {
             $this->setAlertPermission();
             return redirect(route($this->nav));
         }
-        $group['id'] = "";
-        return view('groups-create', compact('group'))->withNav($this->nav);
+        $params['group']['id'] = "";
+        $params['lang_type'] = "create";
+        return view('groups-create', compact('params'))->withNav($this->nav);
     }
 
     public function edit(Request $request) {
@@ -64,7 +64,9 @@ class GroupController extends Controller {
         }else {
             $group = Group::find($request->group);
             if ($group) {
-                return view('groups-create', compact('group'))->withNav($this->nav);
+                $params['group'] = $group;
+                $params['lang_type'] = "edit";
+                return view('groups-create', compact('params'))->withNav($this->nav);
             }
         }
         return redirect(route($this->nav));

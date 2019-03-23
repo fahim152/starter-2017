@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', $page_title)
+@section('title', __('page.' . $titles))
 
 @section('style_main')
 <link href="{{ asset('css/table.css') }}" rel="stylesheet">

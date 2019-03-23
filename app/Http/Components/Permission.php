@@ -10,18 +10,18 @@ trait Permission {
     public function permissions() {
         return [
             [
-                'lang_tag' => "Profile", 'tag' => "profile",
+                'lang_tag' => "profile", 'tag' => "profile",
                 'items' => [
-                    ['visible' => $this->checkPermission('profile', 'change'), 'tag' => 'change', 'lang_tag' => "Change_Profile",],
-                    ['visible' => $this->checkPermission('profile', 'password'), 'tag' => 'password', 'lang_tag' => "Change_Password",],
-                    ['visible' => $this->checkPermission('profile', 'signature'), 'tag' => 'signature', 'lang_tag' => "Change_Signature",],
+                    ['visible' => $this->checkPermission('profile', 'change'), 'tag' => 'change', 'lang_tag' => "profile", 'lang_tag_option' => "change",],
+                    ['visible' => $this->checkPermission('profile', 'password'), 'tag' => 'password', 'lang_tag' => "password", 'lang_tag_option' => "change",],
+                    ['visible' => $this->checkPermission('profile', 'signature'), 'tag' => 'signature', 'lang_tag' => "signature", 'lang_tag_option' => "change",],
                 ],
             ],
             [
                 'lang_tag' => "viewing_menu", 'tag' => "viewing_menu",
                 'items' => [
-                    ['visible' => $this->checkPermission('users'), 'tag' => 'users', 'lang_tag' => "viewing_users",],
-                    ['visible' => $this->checkPermission('groups'), 'tag' => 'groups', 'lang_tag' => "viewing_group",],
+                    ['visible' => $this->checkPermission('users'), 'tag' => 'users', 'lang_tag' => "users", 'lang_tag_option' => "view",],
+                    ['visible' => $this->checkPermission('groups'), 'tag' => 'groups', 'lang_tag' => "groups", 'lang_tag_option' => "view",],
                 ],
             ],
         ];

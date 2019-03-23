@@ -9,12 +9,13 @@ return [
     'edit'                  => 'Edit',
     'update'                => 'Update',
     'save'                  => 'Save',
+    'cancel'                => 'Cancel',
 
     'select'                => 'Select :attribute',
     'change'                => 'Change :attribute',
+    'view'                  => 'View :attribute',
     'remove'                => 'Remove :attribute',
     'preview'               => 'Preview :attribute',
-    'cancel'                => 'Cancel :attribute',
     'check'                 => 'Check :attribute',
 
     'date'                  => ':attribute Date',
@@ -40,11 +41,15 @@ return [
 
     'profile'               => 'Profile',
     'picture'               => 'Picture',
+    'password'              => 'Password',
     'signature'             => 'Signature',
     'dashboard'             => 'Dashboard',
     'menu'                  => 'Menu Control',
 
+    'viewing_menu'          => "Viewing Menu",
     'operation_setup'       => 'Operation',
+    'permission'            => 'Permission',
+    'permissions'           => 'Permissions',
     'group'                 => 'Group',
     'groups'                => 'Groups',
     'user'                  => 'User',

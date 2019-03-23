@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Create User')
+@section('title', __('page.user') . " " . __('page.' . $lang_type))
 
 @section('style')
 @endsection
@@ -111,7 +111,7 @@
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-3">
                                             <button type="submit" class="btn green">{{ ($user['id'] != "") ? __('page.update') : __('page.create') }}</button>
-                                            <a href="{{ route('users') }}" class="btn btn-default"> @lang('page.cancel', ['attribute' => ''])</a>
+                                            <a href="{{ route('users') }}" class="btn btn-default"> @lang('page.cancel')</a>
                                         </div>
                                     </div>
                                 </div>
