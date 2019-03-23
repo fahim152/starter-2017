@@ -42,6 +42,7 @@ return [
     /**
      * Custom Code Here
      */
+    'log_out'               => 'Log Out',
     'name'                  => ':attribute Name',
     'description'           => ':attribute Description',
 

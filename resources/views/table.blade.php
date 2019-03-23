@@ -15,7 +15,7 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1>@lang('page.'.$titles)
+                <h1>@lang('page.'.$title)
                     <small></small>
                 </h1>
             </div>
@@ -51,7 +51,7 @@
             <div class="portlet-title">
                 <div class="caption">
                     <?= $icons ?>
-                    <span class="caption-subject sbold uppercase"> @lang('table.table', ['attribute' => trans($titles)]) </span>
+                    <span class="caption-subject sbold uppercase"> @lang('table.table', ['attribute' => __('page.' .$titles)]) </span>
                 </div>
                 <div class="actions">
                     <div class="btn-group">

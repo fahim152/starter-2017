@@ -38,13 +38,13 @@
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
                                 <a href="{{ route('profile') }}">
-                                    <i class="icon-user"></i> My Profile
+                                    <i class="icon-user"></i> @lang('page.profile')
                                 </a>
                             </li>
                             <li class="divider"> </li>
                             <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="icon-key"></i> Log Out
+                                    <i class="icon-key"></i> @lang('page.log_out')
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}

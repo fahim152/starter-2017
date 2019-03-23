@@ -42,6 +42,7 @@ return [
     /**
      * Custom Code Here
      */
+    'log_out'               => 'লগ আউট',
     'name'                  => ':attribute এর নাম',
     'description'           => ':attribute এর বিবরণ',
 
