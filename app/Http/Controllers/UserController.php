@@ -6,10 +6,7 @@ use Validator;
 use Auth;
 use Hash;
 use App\User;
-use App\District;
-use App\Office;
 use App\Group;
-use App\Project;
 use App\Http\Datatables\UserDatatable;
 use Illuminate\Http\Request;
 
@@ -77,13 +74,7 @@ class UserController extends Controller {
         }
         $params['user']['id'] = "";
         $params['groups'] = Group::all();
-        //if(session()->has('district')) {
-        if(!$this->checkMenuPermission('districts', 'update')) {
-            $params['offices'] = Office::whereDistrictId(Auth::user()->district_id)->get();
-        }else {
-            $params['districts'] = District::all();
-        }
-        //dd($params['offices']);
+
         return view('users-create', $params)->withNav($this->nav);
     }
 
@@ -94,13 +85,7 @@ class UserController extends Controller {
             $user = User::find($request->user);
             $params['user'] = $user;
             $params['groups'] = Group::all();
-            if(!$this->checkMenuPermission('districts', 'update')) {
-                $params['offices'] = Office::whereDistrictId(Auth::user()->district_id)->get();
-            }else {
-                $district_id = (isset($user->office->district) ? $user->office->district->id : '0');
-                $params['districts'] = District::all();
-                $params['offices'] = Office::whereDistrictId($district_id)->get();
-            }
+
             if ($user) {
                 return view('users-create', $params)->withNav($this->nav);
             }
@@ -111,7 +96,6 @@ class UserController extends Controller {
     public function update(Request $request) {
         if($this->checkMenuPermission($this->nav, 'create') || $this->checkMenuPermission($this->nav, 'update')) {
             $validation = [
-                'office'        => 'required',
                 'group'         => 'required',
                 'name'          => 'required|string|max:255',
                 'name_bangla'   => 'required|string|max:255',
@@ -119,9 +103,6 @@ class UserController extends Controller {
             if (!$request->user) {
                 $validation['email']= 'required|string|email|max:255|unique:users';
                 $validation['password']= 'required|string|max:255';
-            }
-            if($this->checkMenuPermission('districts', 'update')) {
-                $validation['district']= 'required';
             }
 
             $validator = Validator::make($request->all(), $validation);
@@ -135,8 +116,6 @@ class UserController extends Controller {
                 $user = new User;
             }
 
-            $user->district_id = ($this->checkMenuPermission('districts', 'update')) ? $request->input('district') : \Auth::user()->district->id;
-            $user->office_id = $request->input('office');
             $user->group_id = $request->input('group');
 
             $user->name = $request->input('name');

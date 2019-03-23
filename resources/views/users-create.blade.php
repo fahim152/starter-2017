@@ -13,7 +13,7 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1> @lang('dashboard.dashboard_title.user') {{ ($user['id'] != "") ? __('dashboard.dashboard_title.edit') : __('dashboard.dashboard_title.create') }}
+                <h1> @lang('page.user') {{ ($user['id'] != "") ? __('page.edit') : __('page.create') }}
                     <small></small>
                 </h1>
             </div>
@@ -23,15 +23,15 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <a href="{{ route('dashboard') }}">@lang('dashboard.dashboard_title.dashboard')</a>
+                <a href="{{ route('dashboard') }}">@lang('page.dashboard')</a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
-                <a href="{{ route('users') }}">  @lang('dashboard.dashboard_title.users')</a>
+                <a href="{{ route('users') }}">  @lang('page.users')</a>
                 <i class="fa fa-circle"></i>
             </li>
             <li>
-                <span class="active">{{ ($user['id'] != "") ? __('dashboard.dashboard_title.edit') : __('dashboard.dashboard_title.create') }}</span>
+                <span class="active">{{ ($user['id'] != "") ? __('page.edit') : __('page.create') }}</span>
             </li>
         </ul>
         <!-- END PAGE BREADCRUMB -->
@@ -41,7 +41,7 @@
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-user"></i>
-                        <span class="caption-subject bold uppercase"> {{ ($user['id'] != "") ? __('dashboard.dashboard_title.edit_form') : __('dashboard.dashboard_title.create_form')  }} </span>
+                        <span class="caption-subject bold uppercase"> {{ ($user['id'] != "") ? __('page.form', ['attribute' => __('page.user'), 'type' => __('page.edit')]) : __('page.form', ['attribute' => __('page.user'), 'type' => __('page.create')]) }} </span>
                     </div>
                 </div>
                 <div class="portlet-body form">
@@ -54,42 +54,12 @@
                                 <input type="hidden" name="user" value="{{$user['id']}}">
                                 <div class="form-body">
 
-                                    @if(isset($districts))
-                                    <!-- District -->
-                                    <div class="form-group has-error-district">
-                                        <label class="col-md-3 control-label"> @lang('dashboard.dashboard_title.district') <span class="required" aria-required="true"> * </span></label>
-                                        <div class="col-md-4">
-                                            <select class="form-control select_dropdown" name="district" id="select_district" data-action="{{ route('district_offices_load') }}" data-target="#office" required="">
-                                                <option value="">-- @lang('dashboard.dashboard_title.select_district') --</option>
-                                                @foreach ($districts as $district)
-                                                <option value="{{$district->id}}" {{( isset($user->district) and $district->id == $user->district->id)?" selected=''" : ""}}>{{$district->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    @endif
-
-                                    <!--User Office-->
-                                    <div class="form-group has-error-office">
-                                        <label class="col-md-3 control-label"> @lang('dashboard.dashboard_title.office') <span class="required" aria-required="true"> * </span></label>
-                                        <div class="col-md-4">
-                                            <select class="form-control" id="office" name="office" required="">
-                                                <option value="">-- @lang('dashboard.dashboard_title.select_office') --</option>
-                                                @if(isset($offices))
-                                                @foreach ($offices as $office)
-                                                <option value="{{$office->id}}" {{( isset($user->office) and $office->id == $user->office->id)?" selected=''" : ""}}>{{$office->name}}</option>
-                                                @endforeach
-                                                @endif
-                                            </select>
-                                        </div>
-                                    </div>
-
                                     <!--User Group-->
                                     <div class="form-group has-error-group">
-                                        <label class="col-md-3 control-label"> @lang('dashboard.dashboard_title.group') <span class="required" aria-required="true"> * </span></label>
+                                        <label class="col-md-3 control-label"> @lang('page.group') <span class="required" aria-required="true"> * </span></label>
                                         <div class="col-md-4">
                                             <select class="form-control" id="group"name="group" required="">
-                                                <option value="">-- @lang('dashboard.dashboard_title.select_group') --</option>
+                                                <option value="">-- @lang('page.select', ['attribute' => __('page.group')]) --</option>
                                                 @foreach ($groups as $group)
                                                 <option value="{{$group->id}}" {{( isset($user['group_id']) and $group->id == $user['group_id'])?" selected=''" : ""}}>{{$group->name}}</option>
                                                 @endforeach
@@ -140,8 +110,8 @@
                                     @endif
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-3">
-                                            <button type="submit" class="btn green">{{ ($user['id'] != "") ? __('dashboard.dashboard_title.update') : __('dashboard.dashboard_title.create') }}</button>
-                                            <a href="{{ route('users') }}" class="btn btn-default"> @lang('dashboard.dashboard_title.cancel')</a>
+                                            <button type="submit" class="btn green">{{ ($user['id'] != "") ? __('page.update') : __('page.create') }}</button>
+                                            <a href="{{ route('users') }}" class="btn btn-default"> @lang('page.cancel', ['attribute' => ''])</a>
                                         </div>
                                     </div>
                                 </div>

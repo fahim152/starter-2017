@@ -43,7 +43,7 @@
             </li>
             @endif
             <li>
-                <span class="active">@lang('page.'.$title) </span>
+                <span class="active">@lang('page.'.$titles) </span>
             </li>
         </ul>
 

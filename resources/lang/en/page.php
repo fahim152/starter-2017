@@ -5,10 +5,11 @@ return [
     'fail'                  => ':attribute Failed!',
     'missing'               => ':attribute Missing!',
     
-    'create'                => 'Create :attribute',
-    'edit'                  => 'Edit :attribute',
-    'update'                => 'Update :attribute',
-    'save'                  => 'Save :attribute',
+    'create'                => 'Create',
+    'edit'                  => 'Edit',
+    'update'                => 'Update',
+    'save'                  => 'Save',
+
     'select'                => 'Select :attribute',
     'change'                => 'Change :attribute',
     'remove'                => 'Remove :attribute',
@@ -17,7 +18,7 @@ return [
     'check'                 => 'Check :attribute',
 
     'date'                  => ':attribute Date',
-    'form'                  => ':attribute Form',
+    'form'                  => ':attribute Form :type',
 
     'submit'                => 'Submit',
     'confirm'               => 'Confirm',
