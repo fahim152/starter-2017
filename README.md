@@ -1,7 +1,6 @@
 # Scratch Booster
 
 In this repository, you can find your next admin panel.
-
 Laravel Version 5.8
 
 As you can say "GORIBER NOVA"
