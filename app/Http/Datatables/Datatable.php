@@ -3,11 +3,11 @@
 namespace App\Http\Datatables;
 
 //use Illuminate\Http\Request;
-use App\Http\Components\Permission;
+use App\Http\Components\Menu;
 use App\Http\Components\Component;
 
 class Datatable {
-    use Component,Permission;
+    use Component,Menu;
 
     public $status = "";
     public $draw = "";

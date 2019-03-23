@@ -34,7 +34,7 @@ class UserController extends Controller {
             'icons' => $this->getIcons($this->nav, true),
             'create' => $this->checkMenuPermission($this->nav, 'create'),
             'filter' => true,
-            'unsortable' => "0,3,4,5,7",
+            'unsortable' => "0,3,4,5",
             'columns' => [
                 [ "title" => "#", "width" => "5%", "filter" => ""],
                 [ "title" => "name", "filter" => $this->filterText("name")],
@@ -199,21 +199,6 @@ class UserController extends Controller {
         $user->picture = $picture;
 
         if ($user->save()) {
-            // $project = Project::find(2);
-            // if($project){
-            //     $project_path = $project->url;
-            //     $path = 'download_dc_image';
-            //     $project_path = $project->url;
-            //     $client1 = new \GuzzleHttp\Client();
-            //     //dd($project_path.'api/v1/'.$path.'/'.$user->id);
-            //     //$res = $client->request('GET', $project_path.'api/v1/'.$path.'/'.$user->id);
-            //     $res = $client1->request('GET', 'http://localhost:8088/api/v1/download_dc_image/2');
-            //     if($res->getStatusCode()==200){
-            //         //return;
-            //         dd($res->getBody());
-            //     }
-
-            // }
             $this->success();
             $this->message = "Picture Updated";
         }

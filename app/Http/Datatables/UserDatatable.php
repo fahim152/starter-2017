@@ -18,8 +18,6 @@ class UserDatatable extends Datatable {
         $name = isset($request->name) ? $request->name : null;
         $email = isset($request->email) ? $request->email : null;
         $group = isset($request->group) ? $request->group : null;
-        $office = isset($request->office) ? $request->office : null;
-        $district = isset($request->district) ? $request->district : null;
         $updated_from = isset($request->updated_from) ? $request->updated_from : null;
         $updated_to = isset($request->updated_to) ? $request->updated_to : null;
 
@@ -34,37 +32,18 @@ class UserDatatable extends Datatable {
                 $query->where('name', 'like', '%'.$group.'%');
             });
         }
-        if ($office) {
-            $results = $results->whereHas('office', function($query) use ($office){
-                $query->where('name', 'like', '%'.$office.'%');
-            });
-        }
-        if ($district) {
-            $results = $results->whereHas('district', function($query) use ($district){
-                $query->where('name', 'like', '%'.$district.'%');
-            });
-        }
         if ($updated_from) {
             $results = $results->where('updated_at', '>=', $this->date_filter($updated_from));
         }
         if ($updated_to) {
             $results = $results->where('updated_at', '<=', $this->date_filter($updated_to, true));
         }
-        if(!$this->checkMenuPermission('districts', 'update')) {
-            $district_name = isset(\Auth::user()->district) ? \Auth::user()->district->name : null;
-            if(isset($district_name)) {
-                $results = $results->whereHas('district', function ($query) use($district_name) {
-                    $query->where('name', $district_name);
-                });
-            }
-        }
         $tableColumns = [
             "",
             "name",
             "email",
-            "",
-            "",
-            "",
+            "group",
+            "mobile",
             "updated_at",
             ""
         ];
@@ -107,7 +86,7 @@ class UserDatatable extends Datatable {
                 $edit = "<a class='btn btn-sm btn-outline blue' title='Edit' href='" . route('user_edit', [$result->id]) . "'> <i class='icon-note'></i> Edit</a>";
             }
             if($this->checkMenuPermission($this->nav, 'delete')) {
-                // $delete = "<a class='btn btn-sm btn-outline red table-row-delete' title='Remove' href='javascript:;' data-id='" . $result->id . "'> <i class='icon-trash'></i> Remove</a>";
+                $delete = "<a class='btn btn-sm btn-outline red table-row-delete' title='Remove' href='javascript:;' data-id='" . $result->id . "'> <i class='icon-trash'></i> Remove</a>";
             }
 
             $data[] = [
@@ -115,8 +94,7 @@ class UserDatatable extends Datatable {
                 isset($result->name) ? $result->name : "",
                 isset($result->email) ? $result->email : "",
                 isset($result->group) ? $result->group->name : "",
-                isset($result->office) ? $result->office->name : "",
-                isset($result->district) ? $result->district->name : "",
+                isset($result->mobile) ? $result->mobile : "",
                 isset($result->updated_at) ? date_format($result->updated_at, 'd/m/Y') : "",
                 (isset($edit) ? $edit : "") . (isset($delete) ? $delete : ""),
             ];
