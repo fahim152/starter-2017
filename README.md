@@ -13,4 +13,17 @@ As simple as you install laravel project
 5. browse http://localhost:8000
 6. login as into seed directory
 
+```bash
+# Clone this repository
+git clone https://github.com/arifsaiket/scratch-booster.git
+# Go into the repository
+cd scratch-booster
+# Install dependencies
+composer install
+# Install Database
+php artisan migrate --seed
+# Run the app
+php artisan serve
+```
+
 Developed with love
