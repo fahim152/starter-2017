@@ -55,11 +55,6 @@ trait Permission {
         }
         return false;
     }
-    
-    public function checkMenuPermission($key, $subkey = "")
-    {
-        return $this->checkPermission('viewing_menu', $key);
-    }
 
     /* This function returns all the statuses assigned to a group of users which they have access to see in datatable.
      * This function returns a String array of statuses.

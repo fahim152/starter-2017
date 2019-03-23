@@ -14,7 +14,7 @@
                         <li class='nav-item {{$class}}'>
                             <a href={{$url}} class='nav-link nav-toggle'>
                                 <?=$item['icon']?>
-                                <span class='title'>@lang('menu.sidebar_title.'.$item['lang_tag'])</span>
+                                <span class='title'>@lang('page.'.$item['lang_tag'])</span>
                                 @if($has_subitem)
                                     <span class="arrow <?= ($nav == $item['tag']) ? 'open': '' ?>"></span>
                                 @endif
@@ -28,7 +28,7 @@
                                         <?php $url = url($subitem['url']); ?>
                                         <li class='nav-item {{$subclass}}'>
                                             <a href={{$url}} class='nav-link'>
-                                                <span class='title'>@lang('menu.sidebar_title.'.$subitem['lang_tag']) </span>
+                                                <span class='title'>@lang('page.'.$subitem['lang_tag']) </span>
                                             </a>
                                         </li>
                                     @endif
@@ -38,7 +38,7 @@
                         </li>
                         @else
                         <li class="heading">
-                            <h3 class="uppercase">@lang('menu.sidebar_title.'.$item['lang_tag'])</h3>
+                            <h3 class="uppercase">@lang('page.'.$item['lang_tag'])</h3>
                         </li>
                         @endif
                     @endif

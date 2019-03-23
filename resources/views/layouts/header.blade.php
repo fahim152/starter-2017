@@ -23,8 +23,8 @@
             <div class="top-menu">
                 <ul class="nav navbar-nav pull-right">
                     <li class="dropdown dropdown-extended dropdown-tasks dropdown-dark">
-                        <a href="javascript:;" id="changeLanguage" data-id="@lang('menu.language.id')" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="true">
-                            <span class="badge badge-primary"> @lang('menu.language.name') </span>
+                        <a href="javascript:;" id="changeLanguage" data-id="@lang('page.lang_alt_code')" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="true">
+                            <span class="badge badge-primary"> @lang('page.lang_alt') </span>
                         </a>
                     </li>
                     @if(Auth::check())

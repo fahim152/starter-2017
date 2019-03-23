@@ -27,6 +27,12 @@ trait Menu {
         }
         return false;
     }
+    
+    public function checkMenuPermission($key, $subkey = "")
+    {
+        return true;
+        // return $this->checkPermission('viewing_menu', $key);
+    }
 
     public function getIcons($nav, $plural = false)
     {

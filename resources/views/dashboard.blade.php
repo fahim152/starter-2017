@@ -13,7 +13,7 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1>@lang('dashboard.dashboard_title.dashboard')
+                <h1>@lang('page.dashboard')
                     <small></small>
                 </h1>
             </div>
@@ -23,7 +23,7 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <span class="active">@lang('dashboard.dashboard_title.dashboard')</span>
+                <span class="active">@lang('page.dashboard')</span>
             </li>
         </ul>
 

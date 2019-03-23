@@ -33,10 +33,11 @@ return [
     'creating'              => 'Creating :attribute',
     'updating'              => 'Updating :attribute',
 
-    'lang'                  => 'Language',
-
-    'bangla'                => 'Bangla',
-    'english'               => 'English',
+    'language'              => 'Language',
+    'lang'                  => 'English',
+    'lang_code'             => 'en',
+    'lang_alt'              => 'Bangla',
+    'lang_alt_code'         => 'bn',
 
     'profile'               => 'Profile',
     'picture'               => 'Picture',
@@ -44,10 +45,10 @@ return [
     'dashboard'             => 'Dashboard',
     'menu'                  => 'Menu Control',
 
-    'group'                 => 'Group:attribute',
-    'user'                  => 'User:attribute',
-
-    's'                     => 's',
-    'es'                    => 'es',
+    'operation_setup'       => 'Operation',
+    'group'                 => 'Group',
+    'groups'                => 'Groups',
+    'user'                  => 'User',
+    'users'                 => 'Users',
 ];
 
