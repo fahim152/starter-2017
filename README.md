@@ -1,5 +1,4 @@
 # Scratch Booster
-====================
 
 In this repository, you can find your next admin panel.
 
