@@ -64,20 +64,5 @@ return [
     'groups'                => 'Groups',
     'user'                  => 'User',
     'users'                 => 'Users',
-
-    '#'                     => '#',
-    'name'                  => 'Name',
-    'description'           => 'Description',
-    'email'                 => 'Email',
-    'group'                 => 'Group',
-    'mobile'                => 'Mobile',
-    'status'                => 'Status',
-    'code'                  => 'Code',
-    'count'                 => 'Count',
-
-    'created_time'          => 'Created Time',
-    'updated_time'          => 'Updated Time',
-    'deleted_time'          => 'Deleted Time',
-    'checked_time'          => 'Checked Time',
 ];
 

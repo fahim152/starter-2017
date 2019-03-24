@@ -29,11 +29,12 @@ return [
     'status'                => 'স্টেটাস',
     'code'                  => 'কোড',
     'count'                 => 'গণনা',
+    'description'           => 'বিবরণ',
+    'users_count'           => 'ব্যবহারকারীদের সংখ্যা',
 
     'created_time'          => 'তৈরি সময়',
     'updated_time'          => 'আপডেট সময়',
     'deleted_time'          => 'মুছে ফেলা সময়',
     'checked_time'          => 'চেক করার সময়',
     
-
 ];

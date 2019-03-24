@@ -20,5 +20,21 @@ return [
     'view'                  => 'View',
     'record'                => 'Record',
     'type'                  => 'Type',
-    
+
+    '#'                     => '#',
+    'name'                  => 'Name',
+    'email'                 => 'Email',
+    'group'                 => 'Group',
+    'mobile'                => 'Mobile',
+    'status'                => 'Status',
+    'code'                  => 'Code',
+    'count'                 => 'Count',
+    'description'           => 'Description',
+    'users_count'           => 'Users Count',
+
+    'created_time'          => 'Created Time',
+    'updated_time'          => 'Updated Time',
+    'deleted_time'          => 'Deleted Time',
+    'checked_time'          => 'Checked Time',
+
 ];
