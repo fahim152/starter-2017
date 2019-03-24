@@ -14,10 +14,9 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'group_id' => '1',
             'name' => 'Developer',
-            'name_bangla' => 'ডেভেলপার',
-            'email' => 'arif.saiket@gmail.com',
+            'email' => 'scratch@booster.com',
             'email_verified_at' => new DateTime,
-            'password' => bcrypt('123456789'),
+            'password' => bcrypt('scratch@booster.com'),
             'updated_at' => new DateTime,
             'created_at' => new DateTime,
         ]);
