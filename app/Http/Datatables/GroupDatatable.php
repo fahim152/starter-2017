@@ -63,10 +63,10 @@ class GroupDatatable extends Datatable {
             // }
             $data[] = [
                 $i+1,
-                isset($result->name) ? $result->name : "",
+                isset($result->name) ? "<a class='' title='View' href='" . route('users_group', [$result->id]) . "'> ".$result->name."</a>" : "",
                 isset($result->description) ? $result->description : "",
-                isset($result->users) ? $result->users->count() : "",
-                ((isset($result->permissions) and $result->permissions != null) ? "<span class='btn btn-sm green'> ✓ </span>" : "<span class='btn btn-sm red-mint'> ✗ </span>") . (isset($edit) ? $edit : "") . (isset($permission) ? $permission : "") . (isset($delete) ? $delete : ""),
+                (isset($result->users) ? $result->users->count() : ""),
+                ((isset($result->permissions) and $result->permissions != null and $result->permissions != "null") ? "<span class='btn btn-sm green'> ✓ </span>" : "<span class='btn btn-sm red-mint'> ✗ </span>") . (isset($edit) ? $edit : "") . (isset($permission) ? $permission : "") . (isset($delete) ? $delete : ""),
             ];
         }
         $this->data = $data;

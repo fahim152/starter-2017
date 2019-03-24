@@ -38,6 +38,10 @@ Route::group(['middleware' => 'auth'],function() {
     Route::get('/users/create', 'UserController@create')->name('user_create');
     Route::get('/users/edit/{user}', 'UserController@edit')->name('user_edit');
     Route::post('/users/update', 'UserController@update')->name('user_update');
+
+    Route::get('/users/group/{group}', 'UserController@index')->name('users_group');
+    Route::post('/users/group/{group}/dataload', 'UserController@datatable')->name('users_group_load');
+
     Route::get('/users/permission/{user}', 'UserController@permission')->name('user_permission');
     Route::post('/users/permission/update', 'UserController@permissionUpdate')->name('user_delete');
     Route::get('/profile', 'UserController@profile')->name('profile');
