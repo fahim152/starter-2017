@@ -35,7 +35,7 @@ class GroupController extends Controller {
                 [ "title" => "#", "width" => "5%", "filter" => ""],
                 [ "title" => "name", "filter" => $this->filterText("name")],
                 [ "title" => "description", "filter" => $this->filterText("description")],
-                [ "title" => "users", "filter" => ""],
+                [ "title" => "users_count", "filter" => ""],
                 [ "title" => "action", "filter" => $this->filterAction(true)],
             ],
         ];
