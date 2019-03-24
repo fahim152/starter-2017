@@ -21,6 +21,8 @@ return [
     'record'                => 'Record',
     'type'                  => 'Type',
 
+    'under'                 => ':child of :parent',
+
     '#'                     => '#',
     'name'                  => 'Name',
     'email'                 => 'Email',

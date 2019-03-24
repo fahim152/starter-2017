@@ -51,7 +51,8 @@
             <div class="portlet-title">
                 <div class="caption">
                     <?= $icons ?>
-                    <span class="caption-subject sbold uppercase"> @lang('table.table', ['attribute' => __('page.' .$titles)]) </span>
+                    <span class="caption-subject sbold uppercase"> @lang('table.table', ['attribute' => __('page.' .$titles)]) </span><br>
+                    <span class="caption-subject sbold uppercase"> @lang('table.under', ['child' => __('table.table', ['attribute' => __('page.' .$titles)]) , 'parent' => $parentTitles]) </span>
                 </div>
                 <div class="actions">
                     <div class="btn-group">

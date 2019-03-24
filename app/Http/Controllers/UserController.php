@@ -36,6 +36,7 @@ class UserController extends Controller {
             'dataload_url' => $dataload_url,
             'title' => "user",
             'titles' => "users",
+            'parentTitles' => Group::find($request->user_group)->name,
             'icon' => $this->getIcons($this->nav),
             'icons' => $this->getIcons($this->nav, true),
             'create' => $this->checkMenuPermission($this->nav, 'create'),

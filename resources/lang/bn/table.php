@@ -21,6 +21,8 @@ return [
     'record'                => 'রেকর্ড',
     'type'                  => 'টাইপ',
 
+    'under'                 => ':parent এর :child',
+
     '#'                     => '#',
     'name'                  => 'নাম',
     'email'                 => 'ইমেইল',
