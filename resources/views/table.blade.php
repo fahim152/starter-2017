@@ -105,9 +105,9 @@
                             <tr role="row" class="heading">
                                 @foreach ($columns as $key => $column)
                                 @if(isset($column['width']))
-                                    <th width='<?= $column['width'] ?>'> @lang('table.'.$column['title']) </th>
+                                    <th width='<?= $column['width'] ?>'> @lang('page.'.$column['title'], ['attribute' => '']) </th>
                                 @else
-                                    <th> <span class='title'> @lang('table.'.$column['title']) <?= isset($column['custom_html']) ? $column['custom_html'] : ''; ?></span> </th>
+                                    <th> <span class='title'> @lang('page.'.$column['title'], ['attribute' => '']) <?= isset($column['custom_html']) ? $column['custom_html'] : ''; ?></span> </th>
                                 @endif
                                 @endforeach
                             </tr>

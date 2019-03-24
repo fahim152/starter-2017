@@ -23,6 +23,7 @@ class GroupDatatable extends Datatable {
         $tableColumns = [
             "",
             "name",
+            "description",
             "",
         ];
         $sortColumn = $request->order[0]['column'];
@@ -63,6 +64,8 @@ class GroupDatatable extends Datatable {
             $data[] = [
                 $i+1,
                 isset($result->name) ? $result->name : "",
+                isset($result->description) ? $result->description : "",
+                isset($result->users) ? $result->users->count() : "",
                 ((isset($result->permissions) and $result->permissions != null) ? "<span class='btn btn-sm green'> ✓ </span>" : "<span class='btn btn-sm red-mint'> ✗ </span>") . (isset($edit) ? $edit : "") . (isset($permission) ? $permission : "") . (isset($delete) ? $delete : ""),
             ];
         }

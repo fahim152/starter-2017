@@ -28,12 +28,14 @@ class GroupController extends Controller {
             'titles' => "groups",
             'icon' => $this->getIcons($this->nav),
             'icons' => $this->getIcons($this->nav, true),
-            'create' => false,
-            'filter' => false,
+            'create' => true,
+            'filter' => true,
             'unsortable' => "0,1,2",
             'columns' => [
                 [ "title" => "#", "width" => "5%", "filter" => ""],
                 [ "title" => "name", "filter" => $this->filterText("name")],
+                [ "title" => "description", "filter" => $this->filterText("description")],
+                [ "title" => "users", "filter" => ""],
                 [ "title" => "action", "filter" => $this->filterAction(true)],
             ],
         ];
