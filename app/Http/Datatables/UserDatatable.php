@@ -18,6 +18,8 @@ class UserDatatable extends Datatable {
         $name = isset($request->name) ? $request->name : null;
         $email = isset($request->email) ? $request->email : null;
         $group = isset($request->group) ? $request->group : null;
+        $user_group = isset($request->user_group) ? $request->user_group : null;
+
         $updated_from = isset($request->updated_from) ? $request->updated_from : null;
         $updated_to = isset($request->updated_to) ? $request->updated_to : null;
 
@@ -30,6 +32,11 @@ class UserDatatable extends Datatable {
         if ($group) {
             $results = $results->whereHas('group', function($query) use ($group){
                 $query->where('name', 'like', '%'.$group.'%');
+            });
+        }
+        if ($user_group) {
+            $results = $results->whereHas('group', function($query) use ($user_group){
+                $query->where('id', $user_group);
             });
         }
         if ($updated_from) {

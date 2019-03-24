@@ -18,15 +18,22 @@ class UserController extends Controller {
     {
     }
 
-    public function index() {
+    public function index(Request $request) {
         if(!$this->checkMenuPermission($this->nav, 'show')) {
             $this->setAlertPermission();
             return redirect(route("home"));
         }
+        if(isset($request->user_group)) {
+            $base_url = route('users_group', ['user_group' => $request->user_group]);
+            $dataload_url = route('users_group_load', ['user_group' => $request->user_group]);
+        }else {
+            $base_url = route('users');
+            $dataload_url = route('users_load');
+        }
 
         $params = [
-            'base_url' => route('users'),
-            'dataload_url' => route('users_load'),
+            'base_url' => $base_url,
+            'dataload_url' => $dataload_url,
             'title' => "user",
             'titles' => "users",
             'icon' => $this->getIcons($this->nav),

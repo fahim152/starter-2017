@@ -39,8 +39,8 @@ Route::group(['middleware' => 'auth'],function() {
     Route::get('/users/edit/{user}', 'UserController@edit')->name('user_edit');
     Route::post('/users/update', 'UserController@update')->name('user_update');
 
-    Route::get('/users/group/{group}', 'UserController@index')->name('users_group');
-    Route::post('/users/group/{group}/dataload', 'UserController@datatable')->name('users_group_load');
+    Route::get('/users/group/{user_group}', 'UserController@index')->name('users_group');
+    Route::post('/users/group/{user_group}/dataload', 'UserController@datatable')->name('users_group_load');
 
     Route::get('/users/permission/{user}', 'UserController@permission')->name('user_permission');
     Route::post('/users/permission/update', 'UserController@permissionUpdate')->name('user_delete');
