@@ -15,10 +15,9 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('code', 100);
+            $table->string('code', 100)->nullable();
             $table->string('slug')->nullable();
             $table->string('name');
-            $table->string('name_bangla')->nullable();
             $table->text('permissions')->nullable();
             $table->text('description')->nullable();
             $table->enum('status', ['pending', 'active', 'archive'])->default("active");
