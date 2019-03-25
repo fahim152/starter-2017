@@ -19235,8 +19235,8 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\xampp-7.3.2\htdocs\scratch-booster\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\xampp-7.3.2\htdocs\scratch-booster\resources\sass\core.scss */"./resources/sass/core.scss");
+__webpack_require__(/*! D:\xampp-7.3.2\htdocs\scratch-booster\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\xampp-7.3.2\htdocs\scratch-booster\resources\sass\core.scss */"./resources/sass/core.scss");
 
 
 /***/ })
