@@ -51,8 +51,11 @@
             <div class="portlet-title">
                 <div class="caption">
                     <?= $icons ?>
-                    <span class="caption-subject sbold uppercase"> @lang('table.table', ['attribute' => __('page.' .$titles)]) </span><br>
-                    <span class="caption-subject sbold uppercase"> @lang('table.under', ['child' => __('table.table', ['attribute' => __('page.' .$titles)]) , 'parent' => $parentTitles]) </span>
+                    @if($parentTitles == "") 
+                        <span class="caption-subject sbold uppercase"> @lang('table.table', ['attribute' => __('page.' .$titles)]) </span><br>
+                    @else
+                        <span class="caption-subject sbold uppercase"> @lang('table.under', ['child' => __('table.table', ['attribute' => __('page.' .$titles)]) , 'parent' => $parentTitles]) </span>
+                    @endif
                 </div>
                 <div class="actions">
                     <div class="btn-group">

@@ -26,9 +26,12 @@ class UserController extends Controller {
         if(isset($request->user_group)) {
             $base_url = route('users_group', ['user_group' => $request->user_group]);
             $dataload_url = route('users_group_load', ['user_group' => $request->user_group]);
+            $group = Group::find($request->user_group);
+            $parentTitles = ($group != null) ? $group->name : "";
         }else {
             $base_url = route('users');
             $dataload_url = route('users_load');
+            $parentTitles = "";
         }
 
         $params = [
@@ -36,7 +39,7 @@ class UserController extends Controller {
             'dataload_url' => $dataload_url,
             'title' => "user",
             'titles' => "users",
-            'parentTitles' => Group::find($request->user_group)->name,
+            'parentTitles' => $parentTitles,
             'icon' => $this->getIcons($this->nav),
             'icons' => $this->getIcons($this->nav, true),
             'create' => $this->checkMenuPermission($this->nav, 'create'),
@@ -107,7 +110,7 @@ class UserController extends Controller {
             $validation = [
                 'group'         => 'required',
                 'name'          => 'required|string|max:255',
-                'mobile'        => 'string|max:11',
+                'mobile'        => 'nullable|numeric|min:1|max:11',
             ];
             if (!$request->user) {
                 $validation['email']= 'required|string|email|max:255|unique:users';
@@ -128,6 +131,9 @@ class UserController extends Controller {
             $user->group_id = $request->input('group');
 
             $user->name = $request->input('name');
+
+            $user->slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $user->name)));
+
             $user->mobile = $request->input('mobile');
 
             if($request->has('email')) {

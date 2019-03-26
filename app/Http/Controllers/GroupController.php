@@ -26,6 +26,7 @@ class GroupController extends Controller {
             'dataload_url' => route('groups_load'),
             'title' => "group",
             'titles' => "groups",
+            'parentTitles' => "",
             'icon' => $this->getIcons($this->nav),
             'icons' => $this->getIcons($this->nav, true),
             'create' => true,
@@ -91,6 +92,9 @@ class GroupController extends Controller {
                 $group = new Group;
             }
             $group->name = $request->input('group_name');
+
+            $group->slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $group->name)));
+
             $group->description = $request->input('group_description');
 
             //    $group->description = $request->input('description');
