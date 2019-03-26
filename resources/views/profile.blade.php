@@ -19,7 +19,7 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1> @lang('dashboard.user_profile.profile') | @lang('dashboard.user_profile.account') </h1>
+                <h1> @lang('page.profile') | @lang('page.account') </h1>
             </div>
             <!-- END PAGE TITLE -->
         </div>
@@ -71,20 +71,20 @@
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption caption-md">
                                         <i class="icon-globe theme-font hide"></i>
-                                        <span class="caption-subject font-blue-madison bold uppercase">@lang('dashboard.user_profile.profile_account')</span>
+                                        <span class="caption-subject font-blue-madison bold uppercase">@lang('page.profile')</span>
                                     </div>
                                     <ul class="nav nav-tabs">
                                         <li class="active">
-                                            <a href="#tab_profile" data-toggle="tab"> @lang('dashboard.user_profile.personal_info_tab')</a>
+                                            <a href="#tab_profile" data-toggle="tab"> @lang('page.change', ['attribute'=> __('page.info')]) </a>
                                         </li>
                                         <li>
-                                            <a href="#tab_avatar" data-toggle="tab"> @lang('dashboard.user_profile.change_pic_tab')</a>
+                                            <a href="#tab_avatar" data-toggle="tab"> @lang('page.change', ['attribute'=> __('page.picture')]) </a>
                                         </li>
                                         <li>
-                                            <a href="#tab_signature" data-toggle="tab"> @lang('dashboard.user_profile.change_sign_tab')</a>
+                                            <a href="#tab_signature" data-toggle="tab"> @lang('page.change', ['attribute'=> __('page.signature')]) </a>
                                         </li>
                                         <li>
-                                            <a href="#tab_password" data-toggle="tab"> @lang('dashboard.user_profile.change_pass_tab')</a>
+                                            <a href="#tab_password" data-toggle="tab"> @lang('page.change', ['attribute'=> __('page.password')]) </a>
                                         </li>
 
                                     </ul>
@@ -102,26 +102,26 @@
                                                     <input type="text" name="name" placeholder="Your Name" class="form-control" value="{{ $profile->name }}" />
                                                 </div>
                                                 <div class="form-group has-error-name_bangla">
-                                                    <label class="control-label">@lang('dashboard.dashboard_title.name')</label>
+                                                    <label class="control-label">@lang('page.name', ['attribute'=> ""])</label>
                                                     <input type="text" name="name_bangla" placeholder="Your Name In Bangla" class="form-control" value="{{ $profile->name_bangla }}" />
                                                 </div>
                                                 <div class="form-group has-error-email">
-                                                    <label class="control-label">@lang('dashboard.dashboard_title.email')</label>
+                                                    <label class="control-label">@lang('page.email')</label>
                                                     <input type="email" name="email" placeholder="Your Email" class="form-control" value="{{ $profile->email }}"/>
                                                 </div>
                                                 <div class="form-group has-error-mobile">
-                                                    <label class="control-label">@lang('dashboard.dashboard_title.mobile')</label>
+                                                    <label class="control-label">@lang('page.mobile')</label>
                                                     <input type="text" name="mobile" placeholder="Your Mobile" class="form-control" value="{{ $profile->mobile }}" maxlength="11"/>
                                                 </div>
                                                 <div class="margiv-top-10">
-                                                    <button type="submit" class="btn green"> @lang('dashboard.user_profile.save_changes') </button>
+                                                    <button type="submit" class="btn green"> @lang('page.save') </button>
                                                 </div>
                                             </form>
                                         </div>
                                         <!-- END PERSONAL INFO TAB -->
                                         <!-- CHANGE AVATAR TAB -->
                                         <div class="tab-pane" id="tab_avatar">
-                                            <p> @lang('dashboard.user_profile.picture_cons') </p>
+                                            <p> @lang('page.picture_cons') </p>
                                             <form class="ajax-form" role="form"  enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="action" value="{{ route('picture_update') }}">
@@ -134,16 +134,16 @@
                                                         <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 150px; max-height: 150px;"> </div>
                                                         <div>
                                                             <span class="btn default btn-file">
-                                                                <span class="fileinput-new"> @lang('dashboard.user_profile.select_pic') </span>
-                                                                <span class="fileinput-exists"> @lang('dashboard.user_profile.change_pic') </span>
+                                                                <span class="fileinput-new"> @lang('page.select', ['attribute'=> __('page.picture')]) </span>
+                                                                <span class="fileinput-exists"> @lang('page.change', ['attribute'=> __('page.picture')]) </span>
                                                                 <input type="file" name="picture" required>
                                                             </span>
-                                                            <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> @lang('dashboard.user_profile.remove_pic') </a>
+                                                            <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> @lang('page.remove_pic') </a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="margin-top-10">
-                                                    <button type="submit" class="btn green "> @lang('dashboard.user_profile.save_pic') </button>
+                                                    <button type="submit" class="btn green "> @lang('page.save') </button>
 
                                                 </div>
                                             </form>
@@ -151,7 +151,7 @@
                                         <!-- END CHANGE AVATAR TAB -->
                                         <!-- CHANGE Signature TAB -->
                                         <div class="tab-pane" id="tab_signature">
-                                            <p> @lang('dashboard.user_profile.signature_cons')   </p>
+                                            <p> @lang('page.signature_cons')   </p>
                                             <form class="ajax-form" role="form"  enctype="multipart/form-data">
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="action" value="{{ route('signature_update') }}">
@@ -165,16 +165,16 @@
                                                         <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 80px;"> </div>
                                                         <div>
                                                             <span class="btn default btn-file">
-                                                                <span class="fileinput-new"> @lang('dashboard.user_profile.select_sign')  </span>
-                                                                <span class="fileinput-exists"> @lang('dashboard.user_profile.change_sign')  </span>
+                                                                <span class="fileinput-new"> @lang('page.select', ['attribute'=> __('page.signature')])  </span>
+                                                                <span class="fileinput-exists"> @lang('page.change', ['attribute'=> __('page.signature')])  </span>
                                                                 <input type="file" name="signature" required>
                                                             </span>
-                                                            <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> @lang('dashboard.user_profile.remove_sign')  </a>
+                                                            <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> @lang('page.remove_sign')  </a>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="margin-top-10">
-                                                    <button type="submit" class="btn green" > @lang('dashboard.user_profile.save_sign')  </button>
+                                                    <button type="submit" class="btn green"> @lang('page.save')  </button>
 
                                                 </div>
                                             </form>
@@ -188,19 +188,19 @@
                                                 <input type="hidden" name="method" value="POST">
 
                                                 <div class="form-group has-error-current_password">
-                                                    <label class="control-label">@lang('dashboard.user_profile.current_pass') </label>
+                                                    <label class="control-label">@lang('page.current_pass') </label>
                                                     <input type="password" name="current_password" class="form-control" />
                                                 </div>
                                                 <div class="form-group has-error-new_password">
-                                                    <label class="control-label">@lang('dashboard.user_profile.new_pass') </label>
+                                                    <label class="control-label">@lang('page.new_pass') </label>
                                                     <input type="password" name="new_password" class="form-control" />
                                                 </div>
                                                 <div class="form-group has-error-confirm_password">
-                                                    <label class="control-label">@lang('dashboard.user_profile.re_new_pass') </label>
+                                                    <label class="control-label">@lang('page.re_new_pass') </label>
                                                     <input type="password" name="confirm_password" class="form-control" />
                                                 </div>
                                                 <div class="margin-top-10">
-                                                    <button type="submit" class="btn green"> @lang('dashboard.user_profile.change_pass')  </button>
+                                                    <button type="submit" class="btn green"> @lang('page.save')  </button>
                                                 </div>
                                             </form>
                                         </div>

@@ -56,6 +56,8 @@ return [
     'mobile'                => 'Mobile',
 
     'profile'               => 'Profile',
+    'account'               => 'Account',
+    'info'                  => 'Personal Info',
     'picture'               => 'Picture',
     'password'              => 'Password',
     'signature'             => 'Signature',
