@@ -33,7 +33,6 @@ return [
     'count'                 => 'Count',
     'description'           => 'Description',
     'users_count'           => 'Users Count',
-
     'created_time'          => 'Created Time',
     'updated_time'          => 'Updated Time',
     'deleted_time'          => 'Deleted Time',
