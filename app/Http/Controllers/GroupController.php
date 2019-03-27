@@ -91,13 +91,13 @@ class GroupController extends Controller {
             } else {
                 $group = new Group;
             }
+            
             $group->name = $request->input('group_name');
 
             $group->slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $group->name)));
 
             $group->description = $request->input('group_description');
 
-            //    $group->description = $request->input('description');
             if ($group->save()) {
                 $this->success();
                 $default = " Group Name '" . $group->name . "'";

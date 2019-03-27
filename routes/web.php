@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth'],function() {
 
     Route::get('/users/permission/{user}', 'UserController@permission')->name('user_permission');
     Route::post('/users/permission/update', 'UserController@permissionUpdate')->name('user_delete');
+    
     Route::get('/profile', 'UserController@profile')->name('profile');
     Route::post('/profile/update', 'UserController@profileUpdate')->name('profile_update');
     Route::post('/profile/password/update', 'UserController@passwordUpdate')->name('password_update');

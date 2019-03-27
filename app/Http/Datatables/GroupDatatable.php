@@ -59,7 +59,7 @@ class GroupDatatable extends Datatable {
                 $permission = "<a class='btn btn-sm btn-outline yellow-casablanca' title='Permission' href='" . route('group_permission', [$result->id]) . "'> <i class='icon-key'></i> Permission</a>";
             }
             if($this->checkMenuPermission($this->nav, 'delete')) {
-                $delete = "<a class='btn btn-sm red table-row-delete' title='Remove' href='javascript:;' data-id='" . $result->id . "'> <i class='icon-trash'></i> Remove</a>";
+                $delete = "<a class='btn btn-sm btn-outline red table-row-delete' title='Remove' href='javascript:;' data-id='" . $result->id . "'> <i class='icon-trash'></i> Remove</a>";
             }
             $data[] = [
                 $i+1,
